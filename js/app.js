@@ -27,7 +27,7 @@ const NavItem = ({ className, href, children, logo }) => (
     {/* Each unique class name */}
     <a className="white no-underline" href={href}>
       {/* Each unique href*/}
-      {logo ? <img src="../images/logo.svg"></img> : children}
+      {logo ? <img src="images/logo.svg"></img> : children}
       {/* Each unique "child" i.e innerText */}
     </a>
   </li>
