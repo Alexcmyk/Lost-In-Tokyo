@@ -23,7 +23,7 @@ const Intro = () => (
 
 // Spread Operator sends all items to the props argument and passes them where its needed. | We destructured the "props" down to just the key items we needed
 const NavItem = ({ className, href, children, logo }) => (
-  <li className={`mh2-ns f6 f4-1 tc ${className}`}>
+  <li className={`mh2-ns f4 f4-1 tc ${className}`}>
     {/* Each unique class name */}
     <a className="white no-underline" href={href}>
       {/* Each unique href*/}
