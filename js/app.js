@@ -50,7 +50,7 @@ const Attraction = ({ title, description, image, className, alt }) => (
   <div className={className}>
     <h1>{title}</h1>
     <p>{description}</p>
-    <img src={`../images/${image}`} alt={alt} />
+    <img src={`./images/${image}`} alt={alt} />
   </div>
 );
 
