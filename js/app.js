@@ -46,22 +46,84 @@ const Intro = () => (
   </div>
 );
 
-const Attraction = ({ title, description, image, className, alt }) => (
-  <div className={className}>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <img src={`./images/${image}`} alt={alt} />
+// Overlay componet
+const Overlay = ({ showInfo, title, description }) => (
+  <div
+    className="absolute w-100 h-100 flex items-center pa3 pa4-ns bg-aqua overlay"
+    // Style if statement for overlay using showInfo
+    style={{ transform: showInfo ? "none" : "translateY(-100%)" }}
+  >
+    <div>
+      <h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{title}</h1>
+      <p className="lh-title lh-copy-ns mv0 black f6 measure-l">{description}</p>
+    </div>
   </div>
 );
+
+// We can also create components as classes. Gives us more functionality and features. i.e lifecycle and react state / *click event
+class Attraction extends React.Component {
+  // ?????
+  constructor(props) {
+    super(props);
+    this.state = {
+      showInfo: false,
+    };
+    // Here we tell our toggleInfo about this by using bind.
+    // Otherwise things like setState will not work
+    this.toggleInfo = this.toggleInfo.bind(this);
+    this.closeInfo = this.closeInfo.bind(this);
+  }
+  // Toggle Info method
+  toggleInfo() {
+    this.setState((prevState, props) => ({
+      // Inverting the showInfo true false
+      showInfo: !prevState.showInfo,
+    }));
+  }
+
+  // Mouse Leave method
+  closeInfo() {
+    this.setState({
+      showInfo: false,
+    });
+  }
+
+  render() {
+    // Shorthand for:
+    // const title = this.props.title
+    // const description = this.props.title and so on. Also called destructuring.
+    const { title, description, className, image } = this.props;
+    // Return is returning our HTML and referencing the consts above for each item
+    const { showInfo } = this.state;
+    return (
+      <div
+        className={`ph4 ph5-ns ph0-l mb4 mb5-ns w-100 overflow-hidden pointer attraction ${className}`}
+        // onClick with set state ??
+        onClick={this.toggleInfo}
+        onMouseLeave={this.closeInfo}
+      >
+        <div className="relative">
+          {/* Pass down all of the props and state */}
+          <Overlay {...this.props} {...this.state} />
+          <img src={`./images/${image}`} className="db" />
+        </div>
+      </div>
+    );
+  }
+}
+
+// * Click event: adding a onClick attribute that runs a function.
+// * onMouseLeave: adds a mouse leave event
 
 const App = () => (
   <div>
     <div className="min-vh-100 ph4 flex flex-column">
+      {/*  Nav Componet */}
       <Nav />
-      {/* our navigation component */}
+      {/* Intro Section */}
       <Intro />
-      {/* our intro text component */}
     </div>
+    {/* Attractions section */}
     <div className="flex flex-wrap container">
       {attractions.map((item) => (
         <Attraction {...item} />
