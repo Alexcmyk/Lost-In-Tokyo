@@ -7,6 +7,7 @@ const attractions = [
     image: "image_1.jpg",
     className: "w-50-l",
     alt: "Mori Art Museum",
+    fontSize: "f6",
   },
   {
     title: "Robot Restaurant",
@@ -16,22 +17,27 @@ const attractions = [
     image: "image_2.jpg",
     className: "w-third-l ml5-l",
     alt: "Robot Restaurant",
+    fontSize: "f6",
   },
   {
     title: "JBS Jazz Bar",
     description:
       "Home to over 10,000 records, JBS Jazz Bar is burrowed away in Shibuya. If simplicity, vinyl and fine whisky are what you’re in search of, this place is for you.",
+    link: "https://thevinylfactory.com/features/jbs-jazz-bar-a-vinyl-sanctuary-in-the-midst-of-tokyo/",
     image: "image_3.jpg",
     className: "w-third-l ml-auto-ns",
     alt: "JBS Jazz Bar",
+    fontSize: "f6",
   },
   {
     title: "Nyan da Neko",
     description:
       "If you love coffee, but you love cats more, Nyan da Neko is worthy of a visit. Located in Odaiba, you can enjoy your beverage with the company of up to 40 cats. Meow.",
+    link: "https://catwisdom101.com/today-is-nyan-nyan-nyan-japanese-cat-day/",
     image: "image_4.jpg",
     className: "w-40-l ml5-l mr5-l",
     alt: "Nyan da Neko",
+    fontSize: "f6",
   },
   {
     title: "Yayoi Kusama Museum",
@@ -41,6 +47,7 @@ const attractions = [
     image: "image_5.jpg",
     className: "w-30-l",
     alt: "Yayoi Kusama Museum",
+    fontSize: "f6",
   },
   {
     title: "Mount Zine",
@@ -50,6 +57,7 @@ const attractions = [
     image: "image_6.jpg",
     className: "w-third-l ml5-l mr-auto-l",
     alt: "Mount Zine",
+    fontSize: "f6",
   },
   {
     title: "Sanrio Puroland",
@@ -58,6 +66,7 @@ const attractions = [
     image: "image_7.jpg",
     className: "w-third-l ml-auto-l mr5-l",
     alt: "Sanrio Puroland",
+    fontSize: "f6",
   },
   {
     title: "Sumida Hokusai Museum",
@@ -67,6 +76,7 @@ const attractions = [
     image: "image_8.jpg",
     className: "w-third-l mr-auto-l",
     alt: "Sumida Hokusai Museum",
+    fontSize: "f6",
   },
   {
     title: "Ghibli Museum",
@@ -76,5 +86,16 @@ const attractions = [
     image: "image_9.jpg",
     className: "w-third-l ml-auto-l",
     alt: "Ghibli Museum",
+    fontSize: "f6",
+  },
+  {
+    title: "Big Love Records",
+    description:
+      "Located in Harajuku, Big Love Records is aptly named, as it is run by husband and wife Masashi Naka and Haruka Hirata. Every vinyl, cassette, CD and zine in the store is picked by Naka and Haruka because they love it, and it means something to them or each other. We have a big love for Big Love.",
+    link: "http://www.bigloverecords.jp/",
+    image: "image_10.jpg",
+    className: "w-third-l ml5-l",
+    alt: "Big Love Records",
+    fontSize: "f7",
   },
 ];

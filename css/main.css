@@ -12,6 +12,18 @@ body {
   margin-right: auto;
 }
 
+.overlay a {
+  text-decoration: none;
+}
+
+.overlay a h1 {
+  transition: color 200ms ease-in-out;
+}
+
+.overlay a:hover h1 {
+  color: yellow;
+}
+
 .bg-aqua {
   background: rgba(0, 255, 255, 0.8);
 }
