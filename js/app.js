@@ -54,9 +54,9 @@ const Overlay = ({ showInfo, title, description, fontSize, link }) => (
     style={{ transform: showInfo ? "none" : "translateY(-100%)" }}
   >
     <div>
-      <a href={link}>
-        <h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{title}</h1>
-      </a>
+      {/* <a href={link}> */}
+      <h1 className="f4 f3-ns mt0 mb2 regular black normal lh-title">{title}</h1>
+      {/* </a> */}
       <p className={`lh-title lh-copy-ns mv0 black measure-l ${fontSize}`}>{description}</p>
     </div>
   </div>
@@ -94,7 +94,7 @@ class Attraction extends React.Component {
     // Shorthand for:
     // const title = this.props.title
     // const description = this.props.title and so on. Also called destructuring.
-    const { title, description, className, image } = this.props;
+    const { title, description, className, image, link } = this.props;
     // Return is returning our HTML and referencing the consts above for each item
     const { showInfo } = this.state;
     return (
@@ -104,11 +104,13 @@ class Attraction extends React.Component {
         onMouseEnter={this.toggleInfo}
         onMouseLeave={this.closeInfo}
       >
-        <div className="relative">
-          {/* Pass down all of the props and state */}
-          <Overlay {...this.props} {...this.state} />
-          <img src={`./images/${image}`} className="db" />
-        </div>
+        <a href={link}>
+          <div className="relative hover">
+            {/* Pass down all of the props and state */}
+            <Overlay {...this.props} {...this.state} />
+            <img src={`./images/${image}`} className="db" />
+          </div>
+        </a>
       </div>
     );
   }

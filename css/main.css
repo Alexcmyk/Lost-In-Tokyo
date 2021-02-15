@@ -12,15 +12,11 @@ body {
   margin-right: auto;
 }
 
-.overlay a {
-  text-decoration: none;
-}
-
-.overlay a h1 {
+.hover .overlay h1 {
   transition: color 200ms ease-in-out;
 }
 
-.overlay a:hover h1 {
+.hover .overlay h1:hover {
   color: #a01a9c;
 }
 
